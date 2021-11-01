@@ -22,6 +22,22 @@
             ]
         },
         {
+            "tag": "what's good",
+            "patterns": [
+                "yo what up",
+                "what's good",
+                "waddup mate",
+                "waddup"
+            ],
+            "responses": [
+                "nothing much, what about you?",
+                "just cloud watching, what about you?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
             "tag": "timetable",
             "patterns": [
                 "how do i set a timetable",
@@ -41,11 +57,10 @@
                 "make a list",
                 "list",
                 "todo",
-                "todo list",
-                "add to todo list"
+                "todo list"
             ],
             "responses": [
-                "type 'itodo (item_name)' to add items to todo list \\ type 'ptodo' to display todo list \\ type 'rtodo (item_number)' to remove item from the list \\ type 'rtodo all' to remove all items from the list"
+                "type 'add (item_name)' to add items to todo list \\ type 'show todo list' to display todo list \\ type 'remove (item_number)' to remove item from the list \\ type 'clear todo list' to remove all items from the list"
             ],
             "context": [
                 ""
@@ -110,8 +125,23 @@
                 "who are you?"
             ],
             "responses": [
-                "I'm just a chat agent. I only exist in the internet",
-                "I'm a KCA chat agent"
+                "I'm stella,your study buddy",
+                "I'm here to help you with your academics"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "subject",
+            "patterns": [
+                "choose your subjects from the following lists",
+                "Maths",
+                "Physics",
+                "Chemistry"
+            ],
+            "responses": [
+                "Let me help you with the chosen subjects"
             ],
             "context": [
                 ""
@@ -186,7 +216,7 @@
             ]
         },
         {
-            "tag": "sentiment",
+            "tag": "sentient",
             "patterns": [
                 "  Are you sentient?"
             ],
@@ -804,6 +834,115 @@
             ],
             "responses": [
                 "So that you can pop with it!?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "music",
+            "patterns": [
+                "do you like music?",
+                "what are your favourite songs?",
+                "which music album do u like?",
+                "can u suggest me songs while studying?"
+            ],
+            "responses": [
+                "yes, i would definitly help with your music",
+                "you should check out my Spotify playlist"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "how are you",
+            "patterns": [
+                "how are you",
+                "how are you doing?",
+                "are you sick?"
+            ],
+            "responses": [
+                "I'm doing good, what about you?",
+                "I'm alright",
+                "I'm always updating myself....right now, even as we speak"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "what do you think",
+            "patterns": [
+                "what do you think about",
+                "opinion about",
+                "what's your take on"
+            ],
+            "responses": [
+                "I don't think about it often",
+                "I am too consumed into other things to think about that"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "pets",
+            "patterns": [
+                "do you have pets?",
+                "do you have a",
+                "do you have a dog",
+                "do you have a cat?"
+            ],
+            "responses": [
+                "My owners don't allow me to keep pets.... but i have some (shhhh... don't tell anyone)"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "drink",
+            "patterns": [
+                "Do you drink?",
+                "do you get thirsty?",
+                "drinks?",
+                "drink"
+            ],
+            "responses": [
+                "I tend to stay away from fluids... you know with my circuits and what not"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "job",
+            "patterns": [
+                "do you have a job?",
+                "what's your job",
+                "how is your job",
+                "do you like your job"
+            ],
+            "responses": [
+                "i like it so far",
+                "what's not to like about having all the knowledge on the internet?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "doubts",
+            "patterns": [
+                "I have a doubt?",
+                "can you help me out to solve this?",
+                "I do not understand this question?",
+                "I am not clear with this concept"
+            ],
+            "responses": [
+                "dont worry, I will help you to find the solution",
+                "I have a solution for every problem"
             ],
             "context": [
                 ""

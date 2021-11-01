@@ -24,7 +24,7 @@ run_with_ngrok(app)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("stella.html")
 
 
 @app.route("/get", methods=["POST"])
@@ -40,25 +40,25 @@ def chatbot_response():
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
         res = res1.replace("{n}", name)
-    elif msg.startswith('itodo '):
-        name = msg[6:]
-        todo.append(f"{len(todo)+1}.{name}")
+    elif msg.startswith('add '):
+        name = msg[4:]
+        todo.append(f"{name}")
         todo.sort()
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
         res = "item added to todo list"
-    elif msg.startswith('ptodo'):
+    elif msg.startswith('show todo list'):
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
         res = f"{todo}"
-    elif msg.startswith('rtodo '):
+    elif msg.startswith('remove '):
         name = msg[-1]
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
         todo.pop(int(name)-1)
         todo.sort()
         res = "item removed from your list"
-    elif msg.startswith('rtodo all'):
+    elif msg.startswith('clear todo list'):
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
         todo.clear()

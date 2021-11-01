@@ -5,3 +5,6 @@ An AI Chatbot using Python and Flask REST API
 This is the model which will be used by the Flask REST API to easily give feedback.<br>
 After running train.py, next run the app.py to initialize and start the bot.<br>
 To add more terms and voccabulary to the bot, modify the intents.json file and add your personalized words and retrain the model again.</p>
+<p>
+P.S: Our code is 
+</p>
