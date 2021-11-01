@@ -31,5 +31,5 @@ After running train.py, next run the app.py to initialize and start the bot.<br>
 You will then get a localhost url in the terminal, by clicking that url you will be redirected to your browser to interact with our bot.</p>
 <h3>Inspiration</h3>
 <p>
-  The code in this project is based on the code from Dennis Maina "https://github.com/Maina-Dennis" and edited by our team.
+  The code in this project is based on the code from Dennis Maina "https://github.com/Maina-Dennis" and edited by our hackathon team.
 </p>
