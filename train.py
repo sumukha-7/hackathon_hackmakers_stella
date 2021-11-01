@@ -1,6 +1,6 @@
 # libraries
 import random
-from keras.optimizers import SGD
+from tensorflow.keras.optimizers import SGD
 from keras.layers import Dense, Dropout
 from keras.models import load_model
 from keras.models import Sequential
@@ -37,7 +37,8 @@ for intent in intents["intents"]:
             classes.append(intent["tag"])
 
 # lemmatizer
-words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
+words = [lemmatizer.lemmatize(w.lower())
+         for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
 
 classes = sorted(list(set(classes)))
@@ -62,7 +63,8 @@ for doc in documents:
     # list of tokenized words for the pattern
     pattern_words = doc[0]
     # lemmatize each word - create base word, in attempt to represent related words
-    pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
+    pattern_words = [lemmatizer.lemmatize(
+        word.lower()) for word in pattern_words]
     # create our bag of words array with 1, if word match found in current pattern
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
@@ -93,18 +95,19 @@ model.summary()
 
 # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
+model.compile(loss="categorical_crossentropy",
+              optimizer=sgd, metrics=["accuracy"])
 
 # for choosing an optimal number of training epochs to avoid underfitting or overfitting use an early stopping callback to keras
-# based on either accuracy or loos monitoring. If the loss is being monitored, training comes to halt when there is an 
+# based on either accuracy or loos monitoring. If the loss is being monitored, training comes to halt when there is an
 # increment observed in loss values. Or, If accuracy is being monitored, training comes to halt when there is decrement observed in accuracy values.
 
-# from keras import callbacks 
+# from keras import callbacks
 # earlystopping = callbacks.EarlyStopping(monitor ="loss", mode ="min", patience = 5, restore_best_weights = True)
 # callbacks =[earlystopping]
 
 # fitting and saving the model
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+hist = model.fit(np.array(train_x), np.array(train_y),
+                 epochs=200, batch_size=5, verbose=1)
 model.save("chatbot_model.h5", hist)
 print("model created")
-

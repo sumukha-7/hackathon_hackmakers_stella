@@ -10,52 +10,52 @@
 <body>
     <div class="row">
         <div class="col-md-10 mr-auto ml-auto">
-    <h1>Dentrice AI ChatBot</h1>
-    <form>
-        <div id="chatbox">
-            <div class="col-md-8 ml-auto mr-auto">
-                <p class="botText"><span>Hi! I'm Your bot.</span></p>
-            </div>
+            <h1>Stella - your personal AI ChatBot</h1>
+            <form>
+                <div id="chatbox">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <p class="botText"><span>Hi! I'm Your bot.</span></p>
+                    </div>
+                </div>
+                <div id="userInput" class="row">
+                    <div class="col-md-10">
+                        <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
+                        <button type="submit" id="send" class="btn btn-warning">Send</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div id="userInput" class="row">
-            <div class="col-md-10">
-                <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
-                <button type="submit" id="send" class="btn btn-warning">Send</button>
-            </div>
-        </div>
-    </form>
-</div>
-</div>
+    </div>
 
-<script>
-    $(document).ready(function() {
-        $("form").on("submit", function(event) {
-            var rawText = $("#text").val();
-            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-            $("#text").val("");
-            $("#chatbox").append(userHtml);
-            document.getElementById("userInput").scrollIntoView({
-                block: "start",
-                behavior: "smooth",
-            });
-            $.ajax({
-                data: {
-                    msg: rawText,
-                },
-                type: "POST",
-                url: "/get",
-            }).done(function(data) {
-                var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-                $("#chatbox").append($.parseHTML(botHtml));
+    <script>
+        $(document).ready(function () {
+            $("form").on("submit", function (event) {
+                var rawText = $("#text").val();
+                var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+                $("#text").val("");
+                $("#chatbox").append(userHtml);
                 document.getElementById("userInput").scrollIntoView({
                     block: "start",
                     behavior: "smooth",
                 });
+                $.ajax({
+                    data: {
+                        msg: rawText,
+                    },
+                    type: "POST",
+                    url: "/get",
+                }).done(function (data) {
+                    var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+                    $("#chatbox").append($.parseHTML(botHtml));
+                    document.getElementById("userInput").scrollIntoView({
+                        block: "start",
+                        behavior: "smooth",
+                    });
+                });
+                event.preventDefault();
             });
-            event.preventDefault();
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>

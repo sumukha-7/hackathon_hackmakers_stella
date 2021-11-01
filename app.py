@@ -11,6 +11,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
 
+todo = []
 # chat initialization
 model = load_model("chatbot_model.h5")
 intents = json.loads(open("intents.json").read())
@@ -18,7 +19,8 @@ words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
 
 app = Flask(__name__)
-run_with_ngrok(app) 
+run_with_ngrok(app)
+
 
 @app.route("/")
 def home():
@@ -32,12 +34,36 @@ def chatbot_response():
         name = msg[11:]
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
-        res =res1.replace("{n}",name)
+        res = res1.replace("{n}", name)
     elif msg.startswith('hi my name is'):
         name = msg[14:]
         ints = predict_class(msg, model)
         res1 = getResponse(ints, intents)
-        res =res1.replace("{n}",name)
+        res = res1.replace("{n}", name)
+    elif msg.startswith('itodo '):
+        name = msg[6:]
+        todo.append(f"{len(todo)+1}.{name}")
+        todo.sort()
+        ints = predict_class(msg, model)
+        res1 = getResponse(ints, intents)
+        res = "item added to todo list"
+    elif msg.startswith('ptodo'):
+        ints = predict_class(msg, model)
+        res1 = getResponse(ints, intents)
+        res = f"{todo}"
+    elif msg.startswith('rtodo '):
+        name = msg[-1]
+        ints = predict_class(msg, model)
+        res1 = getResponse(ints, intents)
+        todo.pop(int(name)-1)
+        todo.sort()
+        res = "item removed from your list"
+    elif msg.startswith('rtodo all'):
+        ints = predict_class(msg, model)
+        res1 = getResponse(ints, intents)
+        todo.clear()
+        res = "your todo list is now empty"
+
     else:
         ints = predict_class(msg, model)
         res = getResponse(ints, intents)
@@ -47,7 +73,8 @@ def chatbot_response():
 # chat functionalities
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
-    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+    sentence_words = [lemmatizer.lemmatize(
+        word.lower()) for word in sentence_words]
     return sentence_words
 
 
@@ -93,4 +120,3 @@ def getResponse(ints, intents_json):
 
 if __name__ == "__main__":
     app.run()
-
