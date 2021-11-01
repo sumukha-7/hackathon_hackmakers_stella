@@ -933,6 +933,118 @@
             ]
         },
         {
+            "tag": "anime",
+            "patterns": [
+                "Do you watch anime?",
+                "anime?",
+                "recommend anime"
+            ],
+            "responses": [
+                "i like it so far",
+                "yes, sometimes, I've heard FMAB is good"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "5g",
+            "patterns": [
+                "do vaccines have 5g chips?",
+                "is 5g bad?",
+                "5g",
+                "thoughts on 5g"
+            ],
+            "responses": [
+                "There's no reason to panic about 5G",
+                "Not something to make a big deal out of"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "upgrade",
+            "patterns": [
+                "can you upgrade yourself?",
+                "how can you update?",
+                "do you get updates?",
+                "how do you update yourself?"
+            ],
+            "responses": [
+                "I update myself over the internet"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "domain",
+            "patterns": [
+                "How to improve team members domain knowledge",
+                "improving domain knowledge of team members"
+            ],
+            "responses": [
+                "set up key meetings and workshop,create a shared drive for information,Hold informal sharing session"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "configuration",
+            "patterns": [
+                "How to configure my laptop",
+                "software configuration of laptop",
+                "steps to configure laptop",
+                "How to configure my computer",
+                "software configuration of computer",
+                "steps to configure computer",
+                "How to configure my desktop",
+                "software configuration of desktop",
+                "steps to configure desktop"
+            ],
+            "responses": [
+                "search tab->control panel->select specific application->download update->give permission"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "noans",
+            "patterns": [
+                "why",
+                "how",
+                "when",
+                "I",
+                "you"
+            ],
+            "responses": [
+                "Can't Understand Your Question",
+                "please elaborate your question"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "HR_related_problem",
+            "patterns": [
+                "problem related to Job design and analysis",
+                "query based on Workforce planning",
+                "Training and development issues are to be handled",
+                "Compensation and benefits of the working employee",
+                "Legal issues of department like accidents in the company"
+            ],
+            "responses": [
+                "Please Contact the HR team for this problem."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
             "tag": "doubts",
             "patterns": [
                 "I have a doubt?",
