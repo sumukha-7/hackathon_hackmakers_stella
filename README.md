@@ -13,6 +13,7 @@ An AI Chatbot using Python and Flask REST API
 
 <h3>Technologies used</h3>
 <p>
+  python, 
   numpy, 
   pickle, 
   json, 
