@@ -1,4 +1,4 @@
-# An-AI-Chatbot-in-Python-and-Flask
+# An-AI-Chatbot-in-Python-and-Flask [![kandi X-Ray](https://kandi.openweaver.com/badges/xray.svg)](https://kandi.openweaver.com/python/sumukha-7/hackathon_hackmakers_stella) [![kandi Featured](https://kandi.openweaver.com/badges/featured.svg)](https://kandi.openweaver.com/collections/buildwithai2021/ai-study-buddy)
 An AI Chatbot using Python and Flask REST API 
 
 <h2>DISCLAIMER<h2>
