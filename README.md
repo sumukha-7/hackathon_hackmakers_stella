@@ -1,10 +1,7 @@
 # An-AI-Chatbot-in-Python-and-Flask
 An AI Chatbot using Python and Flask REST API 
 
-<h2>DISCLAIMER<h2>
-  <p>
-    If you want to test our code, please create a pull request from "ver1.1" branch as that is the last updated branch.
-  </p>
+
 <h3>Introduction</h3>
 <p>
   This is Stella, an AI chatbot that runs on a web browser and capable of maintaining conversations with humans and also handle to-do lists.
